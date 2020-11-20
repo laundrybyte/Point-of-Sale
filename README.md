@@ -22,3 +22,10 @@ Extremely basic, poorly written, Point of Sale system with a GUI that looks like
   <li><b>usermaintenance.py</b> prompts user to either add, edit, remove, or view userdb entries.</li>
   <li><b>globalsettings.py</b> includes option for setting sales tax.</li>
 </ul>
+
+### <b>What I still have to do:</b>
+<ul>
+  <li>Database locks up pretty easily- especially when editing sales tax rate, for some reason.</li>
+  <li>Consolidate variables; Lots of unnecessary variables in transaction.py from when I was first creating it on the CLI.</li>
+  <li>Make the GUI less ugly.</li>
+</ul>
