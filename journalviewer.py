@@ -65,7 +65,7 @@ def journal_viewer_window():
                     n += 1
 
             elif not journal_viewer_filter_results:
-                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font="Ariel 12")
+                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font='Helvetica 8')
                 journal_filter_item_feedback.grid(row=2, column=1)
 
         # If user supplies just a filter date and NOT a filter item
@@ -92,7 +92,7 @@ def journal_viewer_window():
                     n += 1
 
             elif not journal_viewer_filter_results:
-                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font = "Ariel 12")
+                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font='Helvetica 8')
                 journal_filter_item_feedback.grid(row=2, column=1)
 
         # If user supplies just a filter item and NOT a filter date
@@ -119,11 +119,11 @@ def journal_viewer_window():
                     n += 1
 
             elif not journal_viewer_filter_results:
-                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font = "Ariel 12")
+                journal_filter_item_feedback = Label(filter_frame, text="No results found", fg="red", font='Helvetica 8')
                 journal_filter_item_feedback.grid(row=2, column=1)
 
         elif not journal_viewer_filter_date and not journal_viewer_filter_item:
-            journal_filter_item_feedback = Label(filter_frame, text="No filter settings provided", fg="red", font="Ariel 12")
+            journal_filter_item_feedback = Label(filter_frame, text="No filter settings provided", fg="red", font='Helvetica 8')
             journal_filter_item_feedback.grid(row=2, column=1)
 
 
@@ -173,9 +173,7 @@ def journal_viewer_window():
 
     from tkinter import font
 
-    headerfont = font.Font(family='Helvetica', size=25, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
+    labelfont = 'Helvetica 12'
     monofont = 'TkFixedFont'
 
     # Grid configure settings
@@ -209,7 +207,7 @@ def journal_viewer_window():
 
 
     # Display header
-    journal_header = Label(header_frame, font=headerfont, text="Journal Viewer")
+    journal_header = Label(header_frame, font='Helvetica 16 bold', text="Journal Viewer")
     journal_header.grid(row=0, column=0)
 
     # Display journal listbox

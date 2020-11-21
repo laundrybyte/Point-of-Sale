@@ -29,7 +29,7 @@ def login_window():
 
             # Provide feedback
             login_feedback = ("Welcome, " + login_username)
-            login_feedback_label = Label(root, font="Arial 10", fg="green", text=login_feedback)
+            login_feedback_label = Label(root, font='Helvetica 8', fg="green", text=login_feedback)
             login_feedback_label.grid(row=4)
 
             # Clear input fields
@@ -43,7 +43,7 @@ def login_window():
         else:
             login_passcode_input.delete(0, 'end')
             login_feedback = ("User ID/Passcode incorrect.")
-            login_feedback_label = Label(root, font="Ariel 10", fg="red", text=login_feedback)
+            login_feedback_label = Label(root, font='Helvetica 8', fg="red", text=login_feedback)
             login_feedback_label.grid(row=4)
 
 

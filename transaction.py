@@ -165,9 +165,8 @@ def transaction_window():
     root.geometry('1000x800')
     from tkinter import font
 
-    headerfont = font.Font(family='Helvetica', size=24, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
+    headerfont = 'Helvetica 16 bold'
+    labelfont = 'Helvetica 12'
     monofont = 'TkFixedFont'
 
     # Create main frame

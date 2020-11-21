@@ -44,12 +44,12 @@ def item_maintenance_window():
 
                 # If item ID non-numeric
                 if (str(add_item_ID_input)).isdigit() is False:
-                    item_ID_label_feedback = Label(input_frame, font="Arial 10", text="Item ID invalid.", fg="red")
+                    item_ID_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Item ID invalid.", fg="red")
                     item_ID_label_feedback.grid(row=1, column=1)
 
                 # If item ID not between 1-9999
                 if str(add_item_ID_input).isdigit() is True and (int(add_item_ID_input) < 1 or int(add_item_ID_input) > 9999):
-                    item_ID_label_feedback = Label(input_frame, font="Arial 10", text="Item ID must be between 1 and 9999.", fg="red")
+                    item_ID_label_feedback = Label(input_frame, font='Helvetica 8', text="Item ID must be between 1 and 9999.", fg="red")
                     item_ID_label_feedback.grid(row=1, column=1)
 
                 # If all values are provided correctly
@@ -61,7 +61,7 @@ def item_maintenance_window():
 
                         # If item ID is already listed in database
                         if cursor.fetchall():
-                            add_item_ID_label_feedback = Label(item_input_frame, font="Arial 10", text="Item ID already in use", fg="red")
+                            add_item_ID_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Item ID already in use", fg="red")
                             add_item_ID_label_feedback.grid(row=1, column=1)
 
                         # If item ID is available
@@ -73,7 +73,7 @@ def item_maintenance_window():
                             item_root.destroy()
                             get_existing_items()
                     except ValueError:
-                        item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="Price invalid", fg="red")
+                        item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Price invalid", fg="red")
                         item_price_label_feedback.grid(row=5, column=1)
 
 
@@ -90,7 +90,7 @@ def item_maintenance_window():
                     get_existing_items()
 
                 except ValueError:
-                    item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="Price invalid",
+                    item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Price invalid",
                                                           fg="red")
                     item_price_label_feedback.grid(row=5, column=1)
 
@@ -98,6 +98,9 @@ def item_maintenance_window():
         ####################### Add Item Window Definitions #######################
         item_root = Tk()
         item_root.title("Add New Item")
+        item_root.geometry('400x400')
+        item_root.grid_columnconfigure(0, weight=1)
+
 
         # Create main frame
         item_frame = Frame(item_root, height=600, width=800)
@@ -122,7 +125,7 @@ def item_maintenance_window():
         item_ID_field = Entry(item_input_frame)
         item_ID_field.grid(row=0, column=1)
 
-        item_ID_label_feedback = Label(item_input_frame, font="Arial 10", text="")
+        item_ID_label_feedback = Label(item_input_frame, font='Helvetica 8', text="")
         item_ID_label_feedback.grid(row=1, column=1)
 
         item_name_label = Label(item_input_frame, font="Arial 12", text="Item Name: ")
@@ -131,7 +134,7 @@ def item_maintenance_window():
         item_name_field = Entry(item_input_frame)
         item_name_field.grid(row=2, column=1)
 
-        item_name_label_feedback = Label(item_input_frame, font="Arial 10", text="")
+        item_name_label_feedback = Label(item_input_frame, font='Helvetica 8', text="")
         item_name_label_feedback.grid(row=3, column=1)
 
         item_price_label = Label(item_input_frame, font="Arial 12", text="Item Price: $")
@@ -140,7 +143,7 @@ def item_maintenance_window():
         item_price_field = Entry(item_input_frame)
         item_price_field.grid(row=4, column=1)
 
-        item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="")
+        item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="")
         item_price_label_feedback.grid(row=5, column=1)
 
         item_submit_button = Button(item_input_frame, text="Submit", command=add_new_item_submit)
@@ -190,7 +193,7 @@ def item_maintenance_window():
                             item_root.destroy()
                             get_existing_items()
                         except ValueError:
-                            item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="Price invalid", fg="red")
+                            item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Price invalid", fg="red")
                             item_price_label_feedback.grid(row=5, column=1)
                     # If user edits the price and the name
                     elif edit_item_name_input and edit_item_price_input:
@@ -202,13 +205,15 @@ def item_maintenance_window():
                             item_root.destroy()
                             get_existing_items()
                         except ValueError:
-                            item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="Price invalid", fg="red")
+                            item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="Price invalid.", fg="red")
                             item_price_label_feedback.grid(row=5, column=1)
 
 
                 ####################### Edit Item Window Definitions #######################
                 item_root = Tk()
                 item_root.title("Edit Item")
+                item_root.geometry('400x400')
+                item_root.grid_columnconfigure(0, weight=1)
 
                 # Create main frame
                 item_frame = Frame(item_root, height=600, width=800)
@@ -235,7 +240,7 @@ def item_maintenance_window():
                 item_name_field = Entry(item_input_frame)
                 item_name_field.grid(row=2, column=1)
 
-                item_name_label_feedback = Label(item_input_frame, font="Arial 10", text="")
+                item_name_label_feedback = Label(item_input_frame, font='Helvetica 8', text="")
                 item_name_label_feedback.grid(row=3, column=1)
 
                 item_price_label = Label(item_input_frame, font="Arial 12", text="Item Price: $")
@@ -244,7 +249,7 @@ def item_maintenance_window():
                 item_price_field = Entry(item_input_frame)
                 item_price_field.grid(row=4, column=1)
 
-                item_price_label_feedback = Label(item_input_frame, font="Arial 10", text="")
+                item_price_label_feedback = Label(item_input_frame, font='Helvetica 8', text="")
                 item_price_label_feedback.grid(row=5, column=1)
 
                 item_submit_button = Button(item_input_frame, text="Submit", command=edit_item_submit)
@@ -291,14 +296,13 @@ def item_maintenance_window():
     ####################### Main Window Definitions #######################
     root = Tk()
     root.title("Manage Items")
-    root.geometry('500x600')
+    root.geometry('600x800')
 
 
     from tkinter import font
 
-    headerfont = font.Font(family='Helvetica', size=25, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
+    headerfont = 'Helvetica 16 bold'
+    labelfont = 'Helvetica 12'
     monofont = 'TkFixedFont'
 
     root.grid_columnconfigure(0, weight=1)

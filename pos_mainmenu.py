@@ -14,11 +14,10 @@ def main_menu_window():
     root = Tk()
     root.title("Main Menu")
     root.geometry('1000x600')
-    headerfont = font.Font(family='Helvetica', size=25, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
-    # monofont = font.Font(family='TkFixedFont', size=10)
-    monofont = 'TkFixedFont'
+    from tkinter import font
+    headerfont = 'Helvetica 16 bold'
+    labelfont = 'Helvetica 12'
+
     # Create main frame
     frame = Frame(root, height=600, width=500, )
     frame.grid()

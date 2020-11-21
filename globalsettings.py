@@ -21,13 +21,13 @@ def global_settings_window():
         try:
             sales_tax_choice = float(sales_tax_choice)
             sales_tax_rate = sales_tax_choice
-            sales_tax_feedback = Label(input_frame, fg="green", font="Arial 10", text="Sales tax rate updated successfully.")
+            sales_tax_feedback = Label(input_frame, fg="green", font='Helvetica 8', text="Sales tax rate updated successfully.")
             sales_tax_feedback.grid(row=1, column=1)
             sales_tax_update_query = "UPDATE salestaxdb SET salestaxrate = ?"
             cursor.execute(sales_tax_update_query, [(sales_tax_rate)])
             db.commit()
         except ValueError:
-            sales_tax_feedback = Label(input_frame, fg="red", font="Arial 10", text="Sales tax rate must be a decimal.")
+            sales_tax_feedback = Label(input_frame, fg="red", font='Helvetica 8', text="Sales tax rate must be a decimal.")
             sales_tax_feedback.grid(row=1, column=1)
 
 
@@ -36,10 +36,8 @@ def global_settings_window():
     root.geometry('400x400')
     from tkinter import font
 
-    headerfont = font.Font(family='Helvetica', size=25, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
-    monofont = 'TkFixedFont'
+    headerfont = 'Helvetica 16 bold'
+    labelfont = 'Helvetica 12'
 
     root.grid_columnconfigure(0, weight=1)
 

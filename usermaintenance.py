@@ -40,27 +40,27 @@ def user_maintenance_window():
 
             # If user ID non-numeric
             if (str(add_user_ID_input)).isdigit() is False:
-                user_ID_label_feedback = Label(user_input_frame, font="Arial 10", text="User ID invalid.", fg="red")
+                user_ID_label_feedback = Label(user_input_frame, font='Helvetica 8', text="User ID invalid.", fg="red")
                 user_ID_label_feedback.grid(row=1, column=1)
 
             # If user ID not between 1-9999
             if str(add_user_ID_input).isdigit() is True and (int(add_user_ID_input) < 1 or int(add_user_ID_input) > 9999):
-                user_ID_label_feedback = Label(user_input_frame, font="Arial 10", text="User ID must be between 1 and 9999.", fg="red")
+                user_ID_label_feedback = Label(user_input_frame, font='Helvetica 8', text="User ID must be between 1 and 9999.", fg="red")
                 user_ID_label_feedback.grid(row=1, column=1)
 
             # If passcode non-numeric
             if (str(add_user_pass_input)).isdigit() is False:
-                user_passcode_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode invalid.", fg="red")
+                user_passcode_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode invalid.", fg="red")
                 user_passcode_label_feedback.grid(row=5, column=1)
 
             # If passcode not between 1-9999
             if str(add_user_pass_input).isdigit() is True and (int(add_user_pass_input) < 1 or int(add_user_pass_input) > 9999):
-                user_passcode_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode must be between 1 and 9999.", fg="red")
+                user_passcode_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode must be between 1 and 9999.", fg="red")
                 user_passcode_label_feedback.grid(row=5, column=1)
 
             # If no user name provided
             if not add_user_name_input:
-                user_name_label_feedback = Label(user_input_frame, font="Arial 10", text="Name required.", fg="red")
+                user_name_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Name required.", fg="red")
                 user_name_label_feedback.grid(row=3, column=1)
 
             # If all values provided correctly
@@ -74,7 +74,7 @@ def user_maintenance_window():
 
                 # If user ID is already listed in database
                 if cursor.fetchall():
-                    user_ID_label_feedback = Label(user_input_frame, font="Arial 10", text="User ID already in use.", fg="red")
+                    user_ID_label_feedback = Label(user_input_frame, font='Helvetica 8', text="User ID already in use.", fg="red")
                     user_ID_label_feedback.grid(row=1, column=1)
 
                 # If user ID is available
@@ -92,7 +92,8 @@ def user_maintenance_window():
         ####################### Add user Window Definitions #######################
         user_root = Tk()
         user_root.title("Add New user")
-        user_root.geometry('200x200')
+        user_root.geometry('400x400')
+        user_root.grid_columnconfigure(0, weight=1)
 
 
         # Create main frame
@@ -118,7 +119,7 @@ def user_maintenance_window():
         user_ID_field = Entry(user_input_frame)
         user_ID_field.grid(row=0, column=1)
 
-        user_ID_label_feedback = Label(user_input_frame, font="Arial 10", text="")
+        user_ID_label_feedback = Label(user_input_frame, font='Helvetica 8', text="")
         user_ID_label_feedback.grid(row=1, column=1)
 
         user_name_label = Label(user_input_frame, font=labelfont, text="User Name: ")
@@ -127,7 +128,7 @@ def user_maintenance_window():
         user_name_field = Entry(user_input_frame)
         user_name_field.grid(row=2, column=1)
 
-        user_name_label_feedback = Label(user_input_frame, font="Arial 10", text="")
+        user_name_label_feedback = Label(user_input_frame, font='Helvetica 8', text="")
         user_name_label_feedback.grid(row=3, column=1)
 
         user_passcode_label = Label(user_input_frame, font=labelfont, text="Passcode: ")
@@ -136,7 +137,7 @@ def user_maintenance_window():
         user_passcode_field = Entry(user_input_frame, show="*")
         user_passcode_field.grid(row=4, column=1)
 
-        user_passcode_label_feedback = Label(user_input_frame, font="Arial 10", text="")
+        user_passcode_label_feedback = Label(user_input_frame, font='Helvetica 8', text="")
         user_passcode_label_feedback.grid(row=5, column=1)
 
         user_submit_button = Button(user_input_frame, text="Submit", command=add_new_user_submit, height=1, width=10)
@@ -180,12 +181,12 @@ def user_maintenance_window():
                     elif edit_user_pass_input and not edit_user_name_input:
                         # If passcode non-numeric
                         if (str(edit_user_pass_input).isdigit() is False):
-                            user_pass_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode invalid", fg="red")
+                            user_pass_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode invalid", fg="red")
                             user_pass_label_feedback.grid(row=5, column=1)
 
                         # If passcode not between 1-9999
                         if int(edit_user_pass_input) < 1 or int(edit_user_pass_input) > 9999:
-                            user_pass_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode must be between 1 and 9999", fg="red")
+                            user_pass_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode must be between 1 and 9999", fg="red")
                             user_pass_label_feedback.grid(row=5, column=1)
 
                         # If passcode provided correctly
@@ -200,12 +201,12 @@ def user_maintenance_window():
                     elif edit_user_pass_input and edit_user_name_input:
                         # If passcode non-numeric
                         if (str(edit_user_pass_input).isdigit() is False):
-                            user_pass_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode invalid", fg="red")
+                            user_pass_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode invalid", fg="red")
                             user_pass_label_feedback.grid(row=5, column=1)
 
                         # If passcode not between 1-9999
                         if int(edit_user_pass_input) < 1 or int(edit_user_pass_input) > 9999:
-                            user_pass_label_feedback = Label(user_input_frame, font="Arial 10", text="Passcode must be between 1 and 9999", fg="red")
+                            user_pass_label_feedback = Label(user_input_frame, font='Helvetica 8', text="Passcode must be between 1 and 9999", fg="red")
                             user_pass_label_feedback.grid(row=5, column=1)
 
                         # If passcode provided correctly
@@ -221,6 +222,8 @@ def user_maintenance_window():
                 ####################### Edit user Window Definitions #######################
                 user_root = Tk()
                 user_root.title("Edit user")
+                user_root.geometry('400x400')
+                user_root.grid_columnconfigure(0, weight=1)
 
                 # Create main frame
                 user_frame = Frame(user_root, height=600, width=800)
@@ -247,7 +250,7 @@ def user_maintenance_window():
                 user_name_field = Entry(user_input_frame)
                 user_name_field.grid(row=2, column=1)
 
-                user_name_label_feedback = Label(user_input_frame, font="Arial 10", text="")
+                user_name_label_feedback = Label(user_input_frame, font='Helvetica 8', text="")
                 user_name_label_feedback.grid(row=3, column=1)
 
                 user_pass_label = Label(user_input_frame, font=labelfont, text="User Passcode: ")
@@ -256,7 +259,7 @@ def user_maintenance_window():
                 user_pass_field = Entry(user_input_frame, show="*")
                 user_pass_field.grid(row=4, column=1)
 
-                user_pass_label_feedback = Label(user_input_frame, font="Arial 10", text="")
+                user_pass_label_feedback = Label(user_input_frame, font='Helvetica 8', text="")
                 user_pass_label_feedback.grid(row=5, column=1)
 
                 user_submit_button = Button(user_input_frame, text="Submit", command=edit_user_submit, height=1, width=10)
@@ -309,12 +312,11 @@ def user_maintenance_window():
     ####################### Main Window Definitions #######################
     root = Tk()
     root.title("Manage users")
-    root.geometry('500x600')
+    root.geometry('600x800')
     from tkinter import font
 
-    headerfont = font.Font(family='Helvetica', size=25, weight='bold')
-    miniheaderfont = font.Font(family='Helvetica', size=16, weight='bold')
-    labelfont = font.Font(family='Helvetica', size=12, weight='normal')
+    headerfont = 'Helvetica 16 bold'
+    labelfont = 'Helvetica 12'
     monofont = 'TkFixedFont'
 
     root.grid_columnconfigure(0, weight=1)
